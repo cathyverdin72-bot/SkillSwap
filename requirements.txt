@@ -1,3 +1,4 @@
 Flask
 gunicorn
 python-telegram-bot
+supabase
