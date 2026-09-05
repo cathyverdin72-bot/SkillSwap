@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillSwap — Create Account</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 45%, #eef2ff 100%);
+        color: #171717;
+    }
+    .page {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px 18px;
+    }
+    .container {
+        width: 100%;
+        max-width: 430px;
+    }
+    /* LOGO */
+    .logo {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .logo-icon {
+        width: 54px;
+        height: 54px;
+        margin: 0 auto 12px;
+        border-radius: 16px;
+        background: #6c4cff;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 800;
+        box-shadow: 0 10px 25px rgba(108, 76, 255, 0.25);
+    }
+    .logo h1 {
+        font-size: 27px;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+    }
+    .logo span {
+        color: #6c4cff;
+    }
+    .logo p {
+        margin-top: 7px;
+        color: #737373;
+        font-size: 14px;
+    }
+    /* CARD */
+    .card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid #eeeeee;
+        border-radius: 25px;
+        padding: 28px 22px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+    .card h2 {
+        font-size: 23px;
+        margin-bottom: 7px;
+    }
+    .card-subtitle {
+        color: #777777;
+        font-size: 14px;
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+    /* FORM */
+    .field {
+        margin-bottom: 17px;
+    }
+    .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+    .field input {
+        width: 100%;
+        padding: 14px 15px;
+        border: 1px solid #dddddd;
+        border-radius: 13px;
+        font-size: 15px;
+        outline: none;
+        background: #fafafa;
+        transition: 0.2s;
+    }
+    .field input:focus {
+        border-color: #6c4cff;
+        background: #ffffff;
+        box-shadow: 0 0 0 4px rgba(108, 76, 255, 0.09);
+    }
+    .skill-hint {
+        font-size: 11px;
+        color: #888888;
+        margin-top: 6px;
+    }
+    /* BUTTON */
+    button {
+        width: 100%;
+        border: none;
+        border-radius: 13px;
+        padding: 15px;
+        background: #6c4cff;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 10px 22px rgba(108, 76, 255, 0.25);
+        transition: 0.2s;
+    }
+    button:active {
+        transform: scale(0.98);
+    }
+    /* FOOTER */
+    .login {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777777;
+    }
+    .login a {
+        color: #6c4cff;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .back {
+        text-align: center;
+        margin-top: 18px;
+    }
+    .back a {
+        color: #777777;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    /* TRUST */
+    .trust {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 22px;
+        color: #888888;
+        font-size: 11px;
+    }
+    @media (max-width: 380px) {
+        .card {
+            padding: 24px 18px;
+        }
+        .logo h1 {
+            font-size: 24px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="container">
+    <!-- LOGO -->
+    <div class="logo">
+        <div class="logo-icon">
+            S
+        </div>
+        <h1>Skill<span>Swap</span></h1>
+        <p>Share skills. Learn together. Grow together.</p>
+    </div>
+    <!-- SIGNUP CARD -->
+    <div class="card">
+        <h2>Create your account</h2>
+        <p class="card-subtitle">
+            Join SkillSwap and connect with people who can teach
+            what you want to learn — or learn from you.
+        </p>
+        <form method="POST" action="/signup">
+            <div class="field">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+            <div class="field">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                >
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+            </div>
+            <div class="field">
+                <label>What skill do you have?</label>
+                <input
+                    type="text"
+                    name="skill"
+                    placeholder="e.g. Graphic Design"
+                    required
+                >
+                <p class="skill-hint">
+                    You can teach this skill or connect with someone who wants to learn it.
+                </p>
+            </div>
+            <button type="submit">
+                Create My SkillSwap Account →
+            </button>
+        </form>
+        <div class="login">
+            Already have an account?
+            <a href="/">Log in</a>
+        </div>
+    </div>
+    <div class="trust">
+        <span>🔒 Secure</span>
+        <span>🌍 Community</span>
+        <span>🤝 Skill Sharing</span>
+    </div>
+    <div class="back">
+        <a href="/">← Back to SkillSwap</a>
+    </div>
+</div>
+</div>
+</body>
+</html>
