@@ -1,1 +1,543 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillSwap — Learn. Share. Connect. Grow.</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-size: 28px;
+        }
+
+        .login-btn {
+            text-decoration: none;
+            color: #172033;
+            font-weight: bold;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 65px 10px 45px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            display: block;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #667085;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .tagline {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #172033;
+            color: white;
+        }
+
+        .secondary {
+            background: white;
+            color: #172033;
+            border: 1px solid #d9dee8;
+        }
+
+        /* SEARCH */
+
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px auto 60px;
+            max-width: 700px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #d9dee8;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        /* CATEGORIES */
+
+        section {
+            padding: 55px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .category {
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        /* AI SECTION */
+
+        .difference {
+            background: #172033;
+            color: white;
+            border-radius: 25px;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .difference h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .difference p {
+            color: #dce1eb;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .comparison-card {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .comparison-card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* WHY SKILLSWAP */
+
+        .reasons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .reason {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .reason h3 {
+            margin-bottom: 8px;
+        }
+
+        .reason p {
+            color: #667085;
+        }
+
+        /* FINAL CTA */
+
+        .final-cta {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .final-cta h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* DESKTOP */
+
+        @media (min-width: 700px) {
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .categories {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .comparison {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .reasons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- NAVIGATION -->
+
+        <nav>
+            <div class="logo">
+                🤝 SkillSwap
+            </div>
+
+            <a href="/login" class="login-btn">
+                Log in
+            </a>
+        </nav>
+
+
+        <!-- HERO -->
+
+        <header class="hero">
+
+            <h1>
+                Learn. Share.
+                <span>Connect. Grow.</span>
+            </h1>
+
+            <p>
+                Knowledge becomes valuable when you put it into action.
+            </p>
+
+            <p class="tagline">
+                Exchange skills. Meet people. Grow together.
+            </p>
+
+            <div class="buttons">
+
+                <a href="/signup" class="btn primary">
+                    Get Started →
+                </a>
+
+                <a href="/discover" class="btn secondary">
+                    Explore Skills
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="🔎 What do you want to learn?"
+            >
+
+        </div>
+
+
+        <!-- POPULAR SKILLS -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>Explore Skills</h2>
+
+                <p>
+                    Discover people who can teach what you want to learn.
+                </p>
+
+            </div>
+
+            <div class="categories">
+
+                <div class="category">💻 Technology</div>
+
+                <div class="category">🎨 Design</div>
+
+                <div class="category">💼 Business</div>
+
+                <div class="category">🌍 Languages</div>
+
+                <div class="category">📸 Photography</div>
+
+                <div class="category">🍳 Cooking</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI DIFFERENCE -->
+
+        <section>
+
+            <div class="difference">
+
+                <h2>
+                    AI can help you learn.
+                </h2>
+
+                <h2>
+                    SkillSwap helps you put it into action.
+                </h2>
+
+                <p>
+                    You don't have to choose between AI and people.
+                    Learn from AI, courses, books and experience —
+                    then bring that knowledge to SkillSwap and
+                    practice it with real people.
+                </p>
+
+                <div class="comparison">
+
+                    <div class="comparison-card">
+
+                        <h3>🤖 AI</h3>
+
+                        <p>
+                            Information, explanations,
+                            examples and answers.
+                        </p>
+
+                    </div>
+
+                    <div class="comparison-card">
+
+                        <h3>🤝 SkillSwap</h3>
+
+                        <p>
+                            Practice, exchange,
+                            collaboration and human connection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY SKILLSWAP -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>Why Choose SkillSwap?</h2>
+
+                <p>
+                    Learning shouldn't end when the lesson ends.
+                </p>
+
+            </div>
+
+            <div class="reasons">
+
+                <div class="reason">
+
+                    <h3>1. Learn From Real People</h3>
+
+                    <p>
+                        Learn from real experience, mistakes,
+                        shortcuts and different perspectives.
+                    </p>
+
+                </div>
+
+                <div class="reason">
+
+                    <h3>2. Don't Just Learn — Exchange</h3>
+
+                    <p>
+                        Everyone knows something.
+                        Everyone has something they can learn.
+                    </p>
+
+                </div>
+
+                <div class="reason">
+
+                    <h3>3. Turn Knowledge Into Action</h3>
+
+                    <p>
+                        Practice skills, teach others,
+                        collaborate and build together.
+                    </p>
+
+                </div>
+
+                <div class="reason">
+
+                    <h3>4. Build Real Connections</h3>
+
+                    <p>
+                        Your learning partner could become
+                        a friend, collaborator, client or business partner.
+                    </p>
+
+                </div>
+
+                <div class="reason">
+
+                    <h3>5. Stay Accountable</h3>
+
+                    <p>
+                        Learn with someone who can practice
+                        with you and grow alongside you.
+                    </p>
+
+                </div>
+
+                <div class="reason">
+
+                    <h3>6. Discover Opportunities</h3>
+
+                    <p>
+                        Knowledge exchange can lead to projects,
+                        friendships, collaborations and opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+
+        <section class="final-cta">
+
+            <h2>
+                Your next skill is waiting.
+            </h2>
+
+            <p>
+                Find someone. Exchange knowledge.
+                Put learning into action.
+            </p>
+
+            <a href="/signup" class="btn primary">
+                Start Your SkillSwap →
+            </a>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                SkillSwap © 2026
+            </p>
+
+            <p>
+                Learn. Share. Connect. Grow.
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
