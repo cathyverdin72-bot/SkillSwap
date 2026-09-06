@@ -742,16 +742,8 @@ def run_telegram_bot():
 # START TELEGRAM BOT
 # ==================================================
 
-bot_thread = threading.Thread(
-
-    target=run_telegram_bot,
-
-    daemon=True
-
-)
-
-bot_thread.start()
-
+# Telegram bot is temporarily disabled while the web app runs on Render.
+# We will run the bot separately so it doesn't interfere with Flask.
 
 # ==================================================
 # START FLASK
